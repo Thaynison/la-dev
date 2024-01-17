@@ -1,15 +1,14 @@
 <?php
+$DB_HOST=aws.connect.psdb.cloud
+$DB_USERNAME=bihutgynq8a24pp2sy0g
+$DB_PASSWORD=pscale_pw_FSITurGdDweD9pFyaTLWQ6PAllTHypLsn3SFtPz64t4
+$DB_NAME=la-dev
+
 // Conectar ao banco de dados
-$conn = new mysqli($_ENV["DB_HOST"], $_ENV["DB_USERNAME"], $_ENV["DB_PASSWORD"], $_ENV["DB_NAME"]);
+$conn = new mysqli($DB_HOST, $DB_USERNAME, $DB_PASSWORD, $DB_NAME);
 
 // Verificar a conexão
 if ($conn->connect_error) {
     die("Erro na conexão com o banco de dados: " . $conn->connect_error);
 }
-
-// Configurar SSL
-$conn->ssl_set(NULL, NULL, "/etc/ssl/certs/ca-certificates.crt", NULL, NULL);
-
-// Fechar a conexão
-$conn->close();
 ?>
