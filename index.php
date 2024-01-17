@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verificar o resultado da consulta
     if ($result->num_rows > 0) {
-        header("Location: ./public/ponto.php");
+        header("Location: ponto.php");
         exit();
     } else {
         header("Location: registrar.php");
