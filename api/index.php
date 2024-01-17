@@ -1,6 +1,6 @@
 <?php
 // Incluir o arquivo de conexão
-require './vendor/autoload.php';
+require 'vendor/autoload.php';
 include 'conexao.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
