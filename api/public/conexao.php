@@ -1,4 +1,5 @@
 <?php
+
 $DB_HOST=aws.connect.psdb.cloud
 $DB_USERNAME=bihutgynq8a24pp2sy0g
 $DB_PASSWORD=pscale_pw_FSITurGdDweD9pFyaTLWQ6PAllTHypLsn3SFtPz64t4

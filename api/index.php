@@ -53,5 +53,18 @@
 
         <button type="submit">Login</button>
     </form>
+
+    <!-- Elemento para mostrar alerta -->
+    <div id="alert-container"></div>
+
+    <script>
+        // Código JavaScript para mostrar alerta
+        let alertContainer = document.getElementById('alert-container');
+        let alertMessage = "<?php echo isset($_POST['username']) ? 'Usuário ou senha inválidos. Tente novamente.' : '' ?>";
+        
+        if (alertMessage) {
+            alertContainer.innerHTML = '<div style="color: red;">' + alertMessage + '</div>';
+        }
+    </script>
 </body>
 </html>

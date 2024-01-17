@@ -7,8 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     // Preparar e executar a consulta SQL
-    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE username = ? AND password = ?");
-    $stmt->bind_param("ss", $username, $password);
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE username = ?");
+    $stmt->bind_param("s", $username);
 
     $stmt->execute();
 
@@ -16,14 +16,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verificar o resultado da consulta
     if ($result->num_rows > 0) {
-        header("Location: ./public/ponto.php");
-        exit();
-    } else {
-        header("Location: registrar.php");
-        exit();
+        $user = $result->fetch_assoc();
+        if (password_verify($password, $user['password'])) {
+            header("Location: ./public/ponto.php");
+            exit();
+        }
     }
 
-    $stmt->close();
+    // Mostrar alerta no HTML
+    echo '<script>alert("Usuário ou senha inválidos. Tente novamente.");</script>';
 }
 
 // Fechar a conexão com o banco de dados (você também pode remover esta linha se desejar manter a conexão aberta)
