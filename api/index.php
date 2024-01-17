@@ -1,6 +1,8 @@
 <?php
 // Incluir o arquivo de conexão
 require __DIR__ . '/../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/'); 
+$dotenv->load();
 include 'conexao.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
