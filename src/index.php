@@ -1,5 +1,6 @@
 <?php
 // Incluir o arquivo de conexão
+require 'vendor/autoload.php';
 include 'conexao.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -25,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt->close();
 }
-
 ?>
 
 <!DOCTYPE html>

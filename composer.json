@@ -1,0 +1,16 @@
+{
+    "name": "thaynison.silva/la-dev",
+    "autoload": {
+        "psr-4": {
+            "ThaynisonSilva\\LaDev\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Thaynison"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
