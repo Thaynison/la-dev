@@ -21,10 +21,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ./public/ponto.php");
             exit();
         }
+    } else {
+        // Mostrar alerta no HTML
+        echo '<script>alert("Usuário não encontrado. Tente novamente.");</script>';
     }
-
-    // Mostrar alerta no HTML
-    echo '<script>alert("Usuário ou senha inválidos. Tente novamente.");</script>';
 }
 
 // Fechar a conexão com o banco de dados (você também pode remover esta linha se desejar manter a conexão aberta)
